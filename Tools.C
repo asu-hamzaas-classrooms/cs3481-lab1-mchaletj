@@ -1,6 +1,7 @@
 #include <cstdint>
 #include <cstdlib>
 #include <string>
+#include <stdint.h>
 #include "Tools.h"
 
 /*
@@ -43,7 +44,14 @@
 */
 uint64_t Tools::buildLong(uint8_t bytes[LONGSIZE])
 {
-  return 0;
+  int n = 7;
+  uint64_t result = 0;
+  while (n != -1) {
+    result = result << 8;
+    result = result | bytes[n];
+    n--;
+  }
+  return result;
 }
 
 /** 
@@ -67,7 +75,15 @@ uint64_t Tools::buildLong(uint8_t bytes[LONGSIZE])
 */
 uint64_t Tools::getByte(uint64_t source, int32_t byteNum)
 {
-  return 0;
+  if (byteNum > 7 || byteNum < 0)
+  {
+    return 0;
+  }
+  int want = 0x00000000000000FF;
+  int left = byteNum;
+  want = want << left*8;
+  source = source & want;
+  return source >> byteNum*8;
 }
 
 /**
@@ -97,7 +113,14 @@ uint64_t Tools::getByte(uint64_t source, int32_t byteNum)
  */
 uint64_t Tools::getBits(uint64_t source, int32_t low, int32_t high)
 {
+  if (low < 0 || low > 63 || high < 0 || high > 63)
+  {
   return 0;
+  }
+  uint64_t want = 0xFFFFFFFFFFFFFFFF;
+  want = want >> low;
+  want = want << high;
+  return source & want;
 }
 
 

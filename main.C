@@ -59,6 +59,8 @@ static void usage(char * prog);
 */
 int main(int argc, char * argv[])
 {
+   //uint8_t bytesn[LONGSIZE] = {0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88};
+   printf("%lx", Tools::getBits(0x8877665544332211, 0, 7));
    int numFuns = 14;
    int funsPassed = 0;
    std::string check[] = { "\x1B[31m fail \x1B[0m", "\x1B[32m pass \x1B[0m"};
