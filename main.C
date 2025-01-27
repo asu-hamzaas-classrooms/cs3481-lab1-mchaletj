@@ -70,13 +70,13 @@ int main(int argc, char * argv[])
    //printf("%lx \n", Tools::setByte(0x1122334455667788, 0)); //returns 0x11223344556677ff
    //printf("%lx \n", Tools::setByte(0x1122334455667788, 1)); //returns 0x112233445566ff88
    //printf("%lx \n", Tools::setByte(0x1122334455667788, 8)); //returns 0x1122334455667788
-   printf("%lx", Tools::subOverflow(0xffffffffffffffff, 0xffffffffffffffff));// false);
-   printf("%lx", Tools::subOverflow(0x0000000000000004, 0x8000000000000003));// true);
-   printf("%lx", Tools::subOverflow(0x8000000000000008, 8));// true);
-   printf("%lx", Tools::subOverflow(0x8000000000000009, 8));// false);
-   printf("%lx", Tools::subOverflow(0x8000000000000000, 0x8000000000000001));// false);
-   printf("%lx", Tools::subOverflow(0x7ffffffffffffff2ul, -15));// true);
-   printf("%lx", Tools::subOverflow(0x7ffffffffffffff1ul, -15));// false);
+   //printf("%lx", Tools::subOverflow(0xffffffffffffffff, 0xffffffffffffffff));// false);
+   //printf("%lx", Tools::subOverflow(0x0000000000000004, 0x8000000000000003));// true);
+   //printf("%lx", Tools::subOverflow(0x8000000000000008, 8));// true);
+   //printf("%lx", Tools::subOverflow(0x8000000000000009, 8));// false);
+   //printf("%lx", Tools::subOverflow(0x8000000000000000, 0x8000000000000001));// false);
+   //printf("%lx", Tools::subOverflow(0x7ffffffffffffff2ul, -15));// true);
+   //printf("%lx", Tools::subOverflow(0x7ffffffffffffff1ul, -15));// false);
    int numFuns = 10;
    int funsPassed = 0;
    std::string check[] = { "\x1B[31m fail \x1B[0m", "\x1B[32m pass \x1B[0m"};
